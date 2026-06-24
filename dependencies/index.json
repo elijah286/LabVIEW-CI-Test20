@@ -1,0 +1,216 @@
+{
+  "schema": 1,
+  "repo": "elijah286/LabVIEW-CI-Test20",
+  "sha": "5cc42182b459f649601889fef704269cf3658cfa",
+  "revisions": [
+    {
+      "sha": "5cc42182b459f649601889fef704269cf3658cfa",
+      "short": "5cc4218",
+      "message": "Add LabVIEW CI pipeline",
+      "author": "Elijah Kerry",
+      "date": "2026-06-24T22:08:47Z"
+    },
+    {
+      "sha": "3ff005ad65ca7d4c4d3ba356f840a4288ecbe3e2",
+      "short": "3ff005a",
+      "message": "Create .DS_Store",
+      "author": "Elijah Kerry",
+      "date": "2026-06-24T21:36:26Z"
+    },
+    {
+      "sha": "833fb4e0181564bcd6cb75427953cb951d980f55",
+      "short": "833fb4e",
+      "message": "added",
+      "author": "Elijah Kerry",
+      "date": "2026-06-24T21:36:24Z"
+    }
+  ],
+  "config": {
+    "use": "",
+    "actions": {},
+    "vipc": [],
+    "dragon": [],
+    "hasVipcList": false,
+    "hasDragonList": false
+  },
+  "vipc": [
+    {
+      "path": ".github/labview/vipm/ci-tooling.vipc",
+      "role": "core",
+      "capability": "",
+      "tooling": true,
+      "configured": true,
+      "monitored": true,
+      "locked": true,
+      "packages": [
+        "dataflow_g_lib_g_image-0.5.0.1",
+        "jki_lib_caraya-1.4.4.148",
+        "jki_vi_tester",
+        "ni_lib_junit_results_api-1.0.1.6",
+        "ni_lib_utf_junit_report-1.0.1.43"
+      ],
+      "error": ""
+    },
+    {
+      "path": "COTC Dependencies.vipc",
+      "role": "project",
+      "capability": "",
+      "tooling": false,
+      "configured": true,
+      "monitored": true,
+      "locked": false,
+      "packages": [
+        "dataflow_g_lib_g_image-0.5.0.1",
+        "oglib_appcontrol-4.1.0.7",
+        "oglib_array-4.1.0.13",
+        "oglib_error-4.2.0.23",
+        "oglib_file-4.0.0.20",
+        "oglib_lvdata-4.2.0.21",
+        "oglib_string-4.1.0.12"
+      ],
+      "error": ""
+    }
+  ],
+  "nipm": [
+    {
+      "name": "LabVIEW",
+      "source": "NI Package Manager",
+      "labview": true,
+      "platforms": [
+        "windows",
+        "linux"
+      ],
+      "details": "LabVIEW runtime and development packages from the NI feeds."
+    },
+    {
+      "name": "VI Analyzer support",
+      "source": "NI Package Manager",
+      "packages": {
+        "windows": [
+          "ni-viawin-labview-support"
+        ],
+        "linux": [
+          "ni-vialin-labview-support"
+        ]
+      },
+      "platforms": [
+        "windows",
+        "linux"
+      ],
+      "details": "NI VI Analyzer support package used by the analyzer runners."
+    },
+    {
+      "name": "NI Unit Test Framework",
+      "source": "NI Package Manager",
+      "packages": {
+        "windows": [
+          "ni-utf-labview-support"
+        ]
+      },
+      "platforms": [
+        "windows"
+      ],
+      "details": "NI UTF support package used by the Windows unit-test runner."
+    },
+    {
+      "name": "JKI Dragon",
+      "source": "NI Package Manager",
+      "packages": {
+        "windows": [
+          "jki-dragon"
+        ]
+      },
+      "platforms": [
+        "windows"
+      ],
+      "details": "JKI Dragon dependency-management tooling installed from the LabVIEW 2026 NI Package Manager feed."
+    },
+    {
+      "name": "VI Package Manager",
+      "source": "NI Package Manager",
+      "packages": {
+        "windows": [
+          "ni-vipm"
+        ]
+      },
+      "platforms": [
+        "windows"
+      ],
+      "details": "NI-published Windows VIPM package that enables VIPC application during worker builds. Linux installs VIPM from the native Debian package during its worker build."
+    }
+  ],
+  "dragon": {
+    "available": false,
+    "column": "winExp",
+    "ready": false,
+    "health": "",
+    "manifest_version": "",
+    "files": [],
+    "install_set": [],
+    "conflicts": []
+  },
+  "system": [
+    {
+      "name": "VI Browser 2.0 toimages runner",
+      "source": "Repository Go code",
+      "path": ".github/labview/toimages/main.go",
+      "details": "Batch runner compiled from repo Go source; Linux uses the toimages GHCR image and Windows builds runner.exe in the workflow.",
+      "platforms": {
+        "windows": {
+          "present": true,
+          "label": "workflow-built"
+        },
+        "linux": {
+          "present": true,
+          "label": "toimages image"
+        }
+      }
+    },
+    {
+      "name": "lvctl render engine",
+      "source": "Repository Go code + embedded VIs",
+      "path": ".github/labview/toimages/_ni/labview/lvctl",
+      "details": "Renderer used by VI Browser 2.0 to drive LabVIEW and emit position-aware frame JSON.",
+      "platforms": {
+        "windows": {
+          "present": true,
+          "label": "workflow-built"
+        },
+        "linux": {
+          "present": true,
+          "label": "toimages image"
+        }
+      }
+    }
+  ],
+  "columns": [
+    {
+      "key": "windows",
+      "label": "Windows",
+      "platform": "windows",
+      "defaultTag": "latest",
+      "tag": "latest",
+      "ready": false,
+      "packages": [],
+      "failed_packages": [],
+      "nipkg_ready": false,
+      "nipkg_packages": [],
+      "labview_version": "",
+      "version": "latest"
+    },
+    {
+      "key": "linux",
+      "label": "Linux",
+      "platform": "linux",
+      "defaultTag": "latest",
+      "tag": "latest",
+      "ready": false,
+      "packages": [],
+      "failed_packages": [],
+      "nipkg_ready": false,
+      "nipkg_packages": [],
+      "labview_version": "",
+      "version": "latest"
+    }
+  ]
+}
